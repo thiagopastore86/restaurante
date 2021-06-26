@@ -8,7 +8,5 @@ import com.tpastoresolucoes.restaurante.model.entity.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
 	
-
-	
 	
 }
