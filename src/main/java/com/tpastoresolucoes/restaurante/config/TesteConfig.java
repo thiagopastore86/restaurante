@@ -11,7 +11,7 @@ import com.tpastoresolucoes.restaurante.model.entity.Usuario;
 import com.tpastoresolucoes.restaurante.model.repository.UsuarioRepository;
 
 @Configuration
-@Profile("test")
+@Profile("prod")
 public class TesteConfig implements CommandLineRunner{
     
 	@Autowired
