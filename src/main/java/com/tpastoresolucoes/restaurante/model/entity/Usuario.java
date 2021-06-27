@@ -16,6 +16,8 @@ import javax.persistence.Table;
 //import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
 import org.springframework.lang.NonNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -46,6 +48,7 @@ public class Usuario implements Serializable{
 	@NonNull
 	private String senha;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "usuario")
 	private List<Pedido> pedidos;
 	
