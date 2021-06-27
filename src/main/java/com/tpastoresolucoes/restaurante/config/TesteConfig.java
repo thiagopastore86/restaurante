@@ -25,9 +25,9 @@ public class TesteConfig implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		Usuario u1 = Usuario.builder().login("thiago").senha("123456").build();
-		Usuario u2 = Usuario.builder().login("fabi").senha("123456").build();
-		Usuario u3 = Usuario.builder().login("mae").senha("123456").build();
+		Usuario u1 = Usuario.builder().login("thiago").senha("123456").dataCriacao(Instant.now()).build();
+		Usuario u2 = Usuario.builder().login("fabi").senha("854qwe").dataCriacao(Instant.now()).build();
+		Usuario u3 = Usuario.builder().login("mae").senha("abcde").dataCriacao(Instant.now()).build();
 		
 		Pedido o1 = new Pedido(null, Instant.parse("2019-06-20T19:53:07Z"), u1); 
 		Pedido o2 = new Pedido(null, Instant.parse("2019-07-21T03:42:10Z"), u2); 

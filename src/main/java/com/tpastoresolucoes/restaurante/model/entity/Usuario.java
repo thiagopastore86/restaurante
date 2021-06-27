@@ -1,11 +1,10 @@
 package com.tpastoresolucoes.restaurante.model.entity;
 
 import java.io.Serializable;
-//import java.time.LocalDateTime;
+import java.time.Instant;
 import java.util.List;
 
 import javax.persistence.Column;
-//import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,9 +12,9 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-//import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
 import org.springframework.lang.NonNull;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
@@ -52,9 +51,15 @@ public class Usuario implements Serializable{
 	@OneToMany(mappedBy = "usuario")
 	private List<Pedido> pedidos;
 	
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'",timezone = "GMT")
+	@Column(name="data_criacao")
+	@NonNull
+	private Instant dataCriacao;
 	
-	//@Column(name="data_atualizacao")
-	//@Convert(converter=Jsr310JpaConverters.LocalDateConverter.class)
-	//private LocalDateTime dataAtualizacao;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'",timezone = "GMT")
+	@Column(name="data_atualizacao")
+	private Instant dataAtualizacao;
+	
+	
 
 }
